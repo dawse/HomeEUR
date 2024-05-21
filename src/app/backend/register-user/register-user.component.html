@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="title">Registration</div>
+  <div class="content">
+    <form  #addForm="ngForm" class="signin-inner" (ngSubmit)="register(addForm)">
+      <head>
+        <meta charset="UTF-8">
+        <title> </title>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet" >
+        <link rel="stylesheet" href="/src/assets/css/style.css">
+
+      </head>
+      <div class="user-details">
+        <div class="input-box">
+          <span class="details"  *ngIf="firstname.touched && firstname?.errors?.['pattern']" >Que des lettres <br>firstname</span>
+          <input  type="text" placeholder="Enter your name"   [(ngModel)]="registerRequest.firstname"
+
+                  name="firstname" required
+                  #firstname="ngModel">
+
+        </div>
+        <div class="input-box">
+          <span class="details" *ngIf="lastname.touched && lastname?.errors?.['pattern']" >Que des lettres <br>lastname</span>
+          <input type="text" placeholder="Enter your username" name="lastname" [(ngModel)]="registerRequest.lastname"   #lastname="ngModel" required>
+        </div>
+        <div class="input-box">
+          <span class="details" *ngIf="address.touched && address?.errors?.['pattern']" >Que des lettres <br>address</span>
+          <input type="text" placeholder="Enter your address" name="address" [(ngModel)]="registerRequest.address"   #address="ngModel" required>
+        </div>
+        <div class="input-box">
+          <span class="details" *ngIf="CIN.touched && CIN?.errors?.['pattern']" >Que des nombres <br>CIN</span>
+          <input type="text" placeholder="Enter your CIN" name="CIN" [(ngModel)]="registerRequest.CIN"   #CIN="ngModel" required>
+        </div>
+
+        <div class="input-box">
+          <span class="details" *ngIf="email.touched && email?.errors?.['required']" >mail valide <br>Email</span>
+          <input type="text" placeholder="Enter your email"  name="email" [(ngModel)]="registerRequest.email"
+                 #email="ngModel"
+          >
+        </div>
+
+        <div class="input-box">
+          <span class="details" *ngIf="password.touched && password?.errors?.['minlength']" > 8 caracteres<br>Password</span>
+          <input type="password" placeholder="Enter your password" [(ngModel)]="registerRequest.password" name="password"  #password="ngModel">
+        </div>
+
+      </div>
+
+
+      <div class="button">
+        <input type="submit" value="Register">
+      </div>
+
+    </form>
+  </div>
+</div>
+

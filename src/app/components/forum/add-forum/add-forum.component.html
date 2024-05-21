@@ -1,0 +1,24 @@
+<div class="container">
+    <h2>Add a Post</h2>
+    <form (ngSubmit)="createForum()">
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" rows="4" required [(ngModel)]="forum.description"></textarea>
+
+        <label for="photo">Photo:</label>
+        <input type="file" id="photo" name="photo" accept="image/*" required  [(ngModel)]="forum.photo" >
+
+        <label for="equipments">Equipments:</label>
+        <input type="text" id="equipments" name="equipments" required [(ngModel)]="forum.equipements">
+
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" required [(ngModel)]="forum.localisation">
+
+        <label for="date">Date Available:</label>
+        <input type="date" id="date" name="date" required [(ngModel)]="forum.reciproque">
+
+       
+
+        <input type="submit" value="Add Post">
+    </form>
+</div>

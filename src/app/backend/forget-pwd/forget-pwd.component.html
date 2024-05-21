@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="title">reset password</div>
+
+  <div class="user-details">
+    <div class="input-box">
+        <form class="signin-inner" (submit)="onSubmit()">
+          <div class="row">
+            <div class="col-12">
+              <div class="single-input-inner style-bg-border">
+                <input type="email" [(ngModel)]="email" name="email" placeholder="Email" required>
+              </div>
+            </div>
+            <div class="button">
+              <input type="submit" value="send">
+            </div>
+            <div class="media text-center"*ngIf="message">
+              <div class="media-left">
+                <img src="/assets/front/img/icon/18.png" alt="img">
+              </div>
+              <div class="media-body align-self-center">
+                <h5>Check your inbox</h5>
+                <p>{{ message }}</p>
+              </div>
+            </div>
+          </div>
+        </form>
+
+      </div>
+
+  </div>
+</div>

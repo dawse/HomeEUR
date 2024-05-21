@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="title">Authentication</div>
+  <div class="content">
+    <form  class="signin-inner"(submit)="onSubmit()">
+      <head>
+        <meta charset="UTF-8">
+        <title> </title>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet" >
+        <link rel="stylesheet" href="/src/assets/css/style.css">
+
+      </head>
+      <div class="user-details">
+
+
+        <div class="input-box">
+
+          <input type="text" placeholder="Enter your email"  name="email" [(ngModel)]="email">
+        </div>
+
+        <div class="input-box">
+          <input type="password" placeholder="Enter your password" [(ngModel)]="password"  >
+        </div>
+
+
+      </div>
+      <div class="button">
+        <input type="submit" value="authenticate">
+      </div>
+            <div class="col-12 text-center">
+              <a (click)="redirectToForgot()" style="cursor: pointer;"><small>Forgot You Password ?</small></a>
+            </div>
+        </form>
+      </div>
+    </div>
+

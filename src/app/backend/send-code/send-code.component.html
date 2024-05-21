@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="title">Verification</div>
+  <div class="content">
+    <form   class="signin-inner" (submit)="sendCode()">
+      <head>
+        <meta charset="UTF-8">
+        <title> </title>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet" >
+        <link rel="stylesheet" href="/src/assets/css/style.css">
+
+      </head>
+
+      <div class="section-title text-center" *ngIf="codeSent">
+        <h6 class="sub-title">If the timer reaches zero, please try again.</h6>
+        <h6>{{countdown}}</h6>
+      </div>
+
+          <form class="footer-subscribe-inner" (submit)="onVerify()">
+            <div class="row justify-content-center">
+              <div class="col-lg-5">
+                <div class="single-input-inner style-border-bottom">
+                  <input
+                    type="email"
+                    [(ngModel)]="email"
+                    name="email"
+                    placeholder="Your Email Address">
+                </div>
+              </div>
+            </div>
+          </form>
+      <div class="button">
+        <input type="submit" value="send code">
+      </div>
+
+            <div class="row justify-content-center">
+              <div class="col-lg-5">
+                <div class="single-input-inner style-border-bottom">
+                  <input
+                    type="number"
+                    [(ngModel)]="code"
+                    name="code"
+                    placeholder="code">
+                </div>
+
+                <span *ngIf="codeFalse" style="color:red" >Code incorrect, Try Again </span>
+              </div>
+              <div class="button">
+                <input type="submit" value="verify">
+              </div>
+            </div>
+          </form>
+
+        </div>
+      </div>
+
